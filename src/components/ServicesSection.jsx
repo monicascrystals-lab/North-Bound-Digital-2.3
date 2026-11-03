@@ -1,3 +1,4 @@
+import ParticleText from './reactbits/ParticleText';
 import { useState } from "react";
 import services from "../data/services.js";
 import SectionHeading from "./SectionHeading.jsx";
@@ -45,7 +46,21 @@ function ServicesSection() {
         <SectionHeading
           headingId="services-title"
           kicker="What we do"
-          title="Our Services"
+          title={
+  <ParticleText
+    text="Our Services"
+    color="#15324A"
+    highlightColor="#2A9D8F"
+    intro="gather"
+    trigger="mount"
+    gatherDuration={1600}
+    stagger={420}
+    scatter={190}
+    particleSize={2.2}
+    density={4}
+    weight={800}
+  />
+}
           description="Professional digital services designed to help your business build a strong, credible and effective online presence."
         />
         <div className="service-grid">
