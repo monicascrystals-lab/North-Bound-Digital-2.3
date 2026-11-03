@@ -163,23 +163,7 @@ function PackageSection({ onChoosePackage }) {
             </p>
           </div>
         </div>
-        <div className="custom-quote">
-          <div>
-            <h3>Need Something Different?</h3>
-            <p>
-              If your website requires ecommerce, booking systems, payment
-              processing, advanced integrations or custom functionality, I can
-              create a custom solution for your business.
-            </p>
-          </div>
-          <button
-            className="button button-secondary-dark"
-            type="button"
-            onClick={() => onChoosePackage("Custom Website")}
-          >
-            Request a Custom Quote <span aria-hidden="true">→</span>
-          </button>
-        </div>
+
       </div>
     </section>
   );
