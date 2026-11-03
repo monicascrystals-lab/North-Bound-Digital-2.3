@@ -13,6 +13,8 @@ const services = [
       "Mobile optimisation",
       "Basic SEO structure",
     ],
+    priceZA: "R3,500",
+    priceInternational: "US$950",
     icon: "page",
   },
   {
@@ -29,6 +31,8 @@ const services = [
       "Contact page",
       "Additional custom pages",
     ],
+    priceZA: "R5,500",
+    priceInternational: "US$1,450",
     icon: "layers",
   },
   {
@@ -45,6 +49,8 @@ const services = [
       "Improved user experience",
       "Performance improvements",
     ],
+    priceZA: "R3,500",
+    priceInternational: "US$650",
     icon: "refresh",
   },
   {
@@ -54,6 +60,10 @@ const services = [
     fullDescription:
       "Responsive layouts help visitors get a professional experience regardless of the device they are using.",
     includedItems: [],
+    includedMessage: "Included with website projects",
+    priceZA: "R1,500",
+    priceInternational: "US$150",
+    priceNote: "For standalone responsive optimisation of an existing website.",
     icon: "devices",
   },
   {
@@ -70,6 +80,8 @@ const services = [
       "Sitemap setup",
       "Google Search Console setup where required",
     ],
+    priceZA: "R1,500",
+    priceInternational: "US$150",
     icon: "search",
   },
   {
@@ -85,6 +97,10 @@ const services = [
       "Website deployment",
       "Basic launch checks",
     ],
+    priceZA: "R1,500",
+    priceInternational: "US$150",
+    priceNote:
+      "Domain registration and hosting provider fees are charged separately where applicable.",
     icon: "globe",
   },
   {
@@ -101,6 +117,8 @@ const services = [
       "Basic technical maintenance",
       "General support",
     ],
+    priceZA: "R750/month",
+    priceInternational: "US$75/month",
     icon: "support",
   },
   {
@@ -116,6 +134,9 @@ const services = [
       "Adding new sections or content",
       "Updating contact details",
     ],
+    priceZA: "R500",
+    priceInternational: "US$50",
+    priceNote: "Larger content updates are quoted according to scope.",
     icon: "edit",
   },
   {
@@ -130,6 +151,52 @@ const services = [
       "Colour direction",
       "Typography direction",
       "Website-ready logo files",
+    ],
+    pricingOptions: [
+      {
+        name: "Logo Refresh",
+        priceZA: "R1,500",
+        priceInternational: "US$150",
+      },
+      {
+        name: "Logo Redesign",
+        priceZA: "R2,500",
+        priceInternational: "US$250",
+      },
+      {
+        name: "New Custom Logo",
+        priceZA: "R3,000",
+        priceInternational: "US$300",
+      },
+      {
+        name: "Logo + Mini Brand Kit",
+        priceZA: "R5,500",
+        priceInternational: "US$550",
+        description: "May include:",
+        includedItems: [
+          "Primary logo",
+          "Secondary logo",
+          "Icon/favicon",
+          "Colour palette",
+          "Typography recommendations",
+          "Black and white logo versions",
+          "Transparent PNG, JPG and SVG/vector files",
+          "Basic brand usage guide",
+        ],
+      },
+      {
+        name: "Premium Mini Brand Kit",
+        priceZA: "R7,500",
+        priceInternational: "US$750",
+        description: "May additionally include:",
+        includedItems: [
+          "Social media templates",
+          "Social profile graphics",
+          "Business card design",
+          "Email signature",
+          "Expanded brand guide",
+        ],
+      },
     ],
     icon: "spark",
   },

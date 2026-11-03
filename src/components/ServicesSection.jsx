@@ -91,6 +91,57 @@ function ServicesSection() {
                         ))}
                       </ul>
                     )}
+                    {service.includedMessage && (
+                      <p className="service-included-message">
+                        {service.includedMessage}
+                      </p>
+                    )}
+                    {(service.priceZA || service.pricingOptions) && (
+                      <div className="service-pricing">
+                        <span className="service-pricing-availability">
+                          Available separately; no website package required.
+                        </span>
+                        {service.pricingOptions ? (
+                          <ul className="service-pricing-options">
+                            {service.pricingOptions.map((option) => (
+                              <li key={option.name}>
+                                <div className="service-pricing-option">
+                                  <span>{option.name}</span>
+                                  <span>
+                                    Starting from {option.priceZA} /{" "}
+                                    {option.priceInternational}
+                                  </span>
+                                </div>
+                                {option.description && (
+                                  <p>{option.description}</p>
+                                )}
+                                {option.includedItems && (
+                                  <ul className="service-pricing-inclusions">
+                                    {option.includedItems.map((item) => (
+                                      <li key={item}>{item}</li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <>
+                            <span className="service-pricing-label">
+                              Starting from
+                            </span>
+                            <strong>
+                              {service.priceZA} / {service.priceInternational}
+                            </strong>
+                          </>
+                        )}
+                        {service.priceNote && (
+                          <p className="service-pricing-note">
+                            {service.priceNote}
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
                 <button
@@ -119,6 +170,10 @@ function ServicesSection() {
             Discuss Your Project <span aria-hidden="true">→</span>
           </a>
         </div>
+        <p className="services-pricing-disclaimer">
+          Prices shown are starting prices. Final pricing may vary depending on
+          project scope, requirements and third-party costs.
+        </p>
       </div>
     </section>
   );
