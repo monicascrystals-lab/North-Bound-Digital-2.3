@@ -81,7 +81,7 @@ function PackageSection({ onChoosePackage }) {
       id="packages"
       aria-labelledby="packages-title"
     >
-      <div className="content-width">
+      <div className="content-width packages-content">
         <SectionHeading
           headingId="packages-title"
           kicker="Ways to work together"
