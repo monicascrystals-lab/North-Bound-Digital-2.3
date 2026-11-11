@@ -33,13 +33,12 @@ function Hero() {
       />
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="eyebrow reveal">NORTHBOUND DIGITAL</p>
+          <p className="eyebrow reveal">DESIGN WITH DIRECTION</p>
           <h1 className="reveal reveal-delay" id="hero-title">
             Websites Built To Move Your Business Forward.
           </h1>
           <p className="hero-description reveal reveal-late">
-            Professional, modern websites designed to help businesses stand
-            out, build trust and turn visitors into customers.
+            Professional, SEO-ready websites created to help your business get found, build trust and generate more leads.
           </p>
           <div className="hero-actions reveal reveal-late">
             <a className="button button-primary" href="#portfolio">

@@ -2,7 +2,7 @@ function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-inner">
-        <span>© {new Date().getFullYear()} Northbound Digital</span>
+        <span>© {new Date().getFullYear()} Northbound Digital. All rights reserved.</span>
         <div className="footer-contact-links">
           <a href="mailto:info@northbounddigital.co.za">
             info@northbounddigital.co.za

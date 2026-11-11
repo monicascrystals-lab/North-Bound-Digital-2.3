@@ -34,7 +34,7 @@ function AboutSection() {
           <p className="section-kicker">Design with direction</p>
 
           <h2 id="about-title" className="about-title">
-<EchoText text={"North is the direction\nof your Business."} />
+  <EchoText text="North is the direction of your business" />
 </h2>
           
           <p className="section-description">

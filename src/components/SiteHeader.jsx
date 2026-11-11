@@ -1,3 +1,4 @@
+import logo from "../assets/northbound-logo.png";
 import { useEffect, useState } from "react";
 
 const navigationItems = [
@@ -49,12 +50,13 @@ function SiteHeader() {
   return (
     <header className={`site-header${scrolled ? " scrolled" : ""}`}>
       <nav className="nav-wrap" aria-label="Main navigation">
-        <a className="brand" href="#home" aria-label="Northbound Digital home">
-          <span className="brand-mark" aria-hidden="true">
-            N
-          </span>
-          <span>NORTHBOUND DIGITAL</span>
-        </a>
+       <a className="brand" href="#home" aria-label="Northbound Digital home">
+  <img
+    src={logo}
+    alt="Northbound Digital"
+    className="brand-logo"
+  />
+</a>
         <button
           className="menu-toggle"
           type="button"
