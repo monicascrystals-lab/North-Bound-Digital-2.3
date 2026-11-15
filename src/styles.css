@@ -4,6 +4,7 @@
   --slate: #3e5c76;
   --teal: #197269;
   --teal-hover: #176f5c;
+  --accent-blue: #0504AA;
   --ivory: #f7f5f0;
   --main-background: #DCE6EC;
   --alternate-background: #E8EEF2;
@@ -64,6 +65,67 @@ button {
   background: #000f24;
   box-shadow: 0 8px 28px rgba(13, 30, 44, 0.14);
   backdrop-filter: blur(14px);
+}
+
+.custom-cursor {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled a,
+  html.custom-cursor-enabled button,
+  html.custom-cursor-enabled select {
+    cursor: none;
+  }
+
+  html.custom-cursor-enabled input,
+  html.custom-cursor-enabled textarea,
+  html.custom-cursor-enabled [contenteditable="true"] {
+    cursor: text;
+  }
+
+  html.custom-cursor-enabled .custom-cursor {
+    display: block;
+  }
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+}
+
+.custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--accent-blue);
+  border-radius: 50%;
+  transition: border-color 0.16s ease, opacity 0.16s ease;
+}
+
+.custom-cursor.is-visible .custom-cursor-dot,
+.custom-cursor.is-visible .custom-cursor-ring {
+  opacity: 1;
+}
+
+.custom-cursor.is-hovering .custom-cursor-dot {
+  background: var(--accent-blue);
+}
+
+.custom-cursor.is-hovering .custom-cursor-ring {
+  border-color: var(--accent-blue);
 }
 
 .skip-link {
@@ -472,7 +534,7 @@ h3 {
 
 .section-kicker {
   margin: 0 0 18px;
-  color: var(--teal);
+  color: var(--accent-blue);
   font-family: var(--heading-font);
   font-size: 10px;
   font-weight: 700;
@@ -1737,7 +1799,7 @@ a:focus-visible {
 
 .portfolio-label {
   margin: 0 0 7px;
-  color: var(--teal);
+  color: var(--accent-blue);
   font: 700 10px/1.4 var(--heading-font);
   letter-spacing: 0.14em;
   text-transform: uppercase;

@@ -7,7 +7,8 @@ function SiteFooter({ onOpenCookieSettings }) {
           <a href="mailto:studio@northbounddigital.co.za">
             studio@northbounddigital.co.za
           </a>
-          <a href="tel:+27766115666">Phone: 076 611 5666</a>
+          <a href="tel:+27766115666">076 611 5666</a>
+          <a href="https://wa.me/27766115666">WhatsApp</a>
         </div>
         <nav className="footer-legal-links" aria-label="Legal">
           <a href="#terms-and-conditions">Terms and Conditions</a>
