@@ -130,8 +130,8 @@ function PortfolioSection() {
         <SectionHeading
           headingId="portfolio-title"
           kicker="Selected work"
-          title="Good work speaks for itself."
-          description="A thoughtful website starts with a clear picture of where you want your business to go."
+          title="Design that does the talking."
+          description="A selection of work focused on clarity, credibility and strong first impressions."
         />
 <div className="portfolio-project">
   <div className="portfolio-card">
@@ -187,6 +187,11 @@ function PortfolioSection() {
     </button>
   </div>
 </div>
+
+        <div className="portfolio-upcoming">
+          <h3>More work is on the way.</h3>
+          <p>New website projects are currently in development and will be added here soon.</p>
+        </div>
 
         </div>
       </div>

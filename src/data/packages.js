@@ -1,6 +1,5 @@
 // CHANGE PACKAGE FEATURES HERE
 const starterFeatures = [
-  "Up to 3 pages",
   "Professional responsive design",
   "Mobile, tablet and desktop optimisation",
   "Contact/enquiry form",
@@ -20,18 +19,16 @@ const starterFeatures = [
 ];
 
 const essentialAdditions = [
-  "Up to 5 pages",
   "More customised professional design",
-  "Additional content sections",
   "Improved page layouts",
+  "Additional content sections",
   "Basic portfolio or gallery functionality",
   "More space for services and company information",
-  "2 revision rounds",
-  "30 days post-launch technical support",
+  "Revision allowance increased to 2 rounds",
+  "Post-launch technical support extended to 30 days",
 ];
 
 const businessAdditions = [
-  "Up to 6 pages",
   "Enhanced custom design",
   "Google Analytics setup",
   "Enhanced on-page SEO",
@@ -42,12 +39,10 @@ const businessAdditions = [
   "Enhanced performance optimisation",
   "More advanced animations and interactions",
   "Conversion-focused calls-to-action",
-  "2 revision rounds",
-  "60 days post-launch technical support",
+  "Post-launch technical support extended to 60 days",
 ];
 
 const professionalAdditions = [
-  "Up to 10 pages",
   "Fully customised website design",
   "Advanced animations and interactions",
   "Advanced enquiry forms",
@@ -56,22 +51,11 @@ const professionalAdditions = [
   "Advanced integrations within the agreed project scope",
   "Advanced SEO foundations",
   "Structured data / schema setup where appropriate",
-  "Advanced performance optimisation",
   "Enhanced accessibility optimisation",
   "Priority project support",
-  "3 revision rounds",
-  "90 days post-launch technical support",
+  "Revision allowance increased to 3 rounds",
+  "Post-launch technical support extended to 90 days",
 ];
-
-function replacePackageTerms(features, additions) {
-  const sharedFeatures = features.filter(
-    (feature) =>
-      !/^Up to \d+ pages$/.test(feature) &&
-      !/^\d+ revision round/.test(feature) &&
-      !/^\d+ days post-launch technical support$/.test(feature),
-  );
-  return [...sharedFeatures, ...additions];
-}
 
 // CHANGE PACKAGE PRICES HERE
 const packagePrices = {
@@ -86,7 +70,7 @@ const packageDefinitions = [
     name: "Starter",
     description:
       "A simple, professional website for businesses that need a strong online presence without unnecessary complexity.",
-    pages: "Up to 3 pages",
+    pages: "Up to 3 total pages",
     highlights: [
       "Professional responsive design",
       "Contact/enquiry form",
@@ -94,27 +78,29 @@ const packageDefinitions = [
       "14 days post-launch technical support",
     ],
     features: starterFeatures,
+    includesHeading: "Everything included",
     supportPeriod: "14 days post-launch technical support",
   },
   {
     name: "Essential",
     description:
-      "A complete professional website for small businesses that need more space to showcase their services and build credibility.",
-    pages: "Up to 5 pages",
+      "A more complete professional website for small businesses that need more space to showcase their services and build credibility.",
+    pages: "Up to 5 total pages",
     highlights: [
       "Everything included in Starter",
       "More customised professional design",
       "Basic portfolio or gallery functionality",
-      "30 days post-launch technical support",
+      "Post-launch technical support extended to 30 days",
     ],
-    features: replacePackageTerms(starterFeatures, essentialAdditions),
-    supportPeriod: "30 days post-launch technical support",
+    features: essentialAdditions,
+    includesHeading: "Includes all Starter features, plus these upgrades",
+    supportPeriod: "Post-launch technical support extended to 30 days",
   },
   {
     name: "Business",
     description:
-      "A more advanced website for growing businesses that want stronger design, lead generation, analytics and additional functionality.",
-    pages: "Up to 6 pages",
+      "A more advanced website for growing businesses that need stronger design, analytics, lead generation and additional functionality.",
+    pages: "Up to 6 total pages",
     badge: "Most Popular",
     highlights: [
       "Everything included in Essential",
@@ -122,31 +108,24 @@ const packageDefinitions = [
       "Google Analytics setup",
       "Multiple enquiry/contact forms where required",
     ],
-    features: replacePackageTerms(
-      replacePackageTerms(starterFeatures, essentialAdditions),
-      businessAdditions,
-    ),
-    supportPeriod: "60 days post-launch technical support",
+    features: businessAdditions,
+    includesHeading: "Includes all Essential features, plus these upgrades",
+    supportPeriod: "Post-launch technical support extended to 60 days",
   },
   {
     name: "Professional",
     description:
-      "A highly customised website for businesses that require a larger, more advanced and distinctive online presence.",
-    pages: "Up to 10 pages",
+      "A highly customised website for businesses that need a larger, more advanced and distinctive online presence.",
+    pages: "Up to 10 total pages",
     highlights: [
       "Everything included in Business",
       "Fully customised website design",
       "Blog or CMS functionality where required",
-      "90 days post-launch technical support",
+      "Post-launch technical support extended to 90 days",
     ],
-    features: replacePackageTerms(
-      replacePackageTerms(
-        replacePackageTerms(starterFeatures, essentialAdditions),
-        businessAdditions,
-      ),
-      professionalAdditions,
-    ),
-    supportPeriod: "90 days post-launch technical support",
+    features: professionalAdditions,
+    includesHeading: "Includes all Business features, plus these upgrades",
+    supportPeriod: "Post-launch technical support extended to 90 days",
   },
 ];
 

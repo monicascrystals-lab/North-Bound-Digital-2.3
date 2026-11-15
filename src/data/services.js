@@ -106,16 +106,16 @@ const services = [
   {
     title: "Website Maintenance & Support",
     shortDescription:
-      "Ongoing help to keep your website updated, secure and running smoothly.",
+      "Ongoing technical care to help keep your website secure, stable and running smoothly.",
     fullDescription:
       "Maintenance can be quoted separately or included in a Website Care plan.",
     includedItems: [
-      "Small content changes",
-      "Image updates",
-      "Contact-detail changes",
       "Website backups",
       "Basic technical maintenance",
-      "General support",
+      "Minor bug fixes",
+      "Troubleshooting support",
+      "Link and form checks",
+      "General website support",
     ],
     priceZA: "R750/month",
     priceInternational: "US$75/month",
@@ -124,8 +124,9 @@ const services = [
   {
     title: "Content & Image Updates",
     shortDescription:
-      "Keep your website accurate and current as your business changes.",
-    fullDescription: "Update website content to reflect your latest information:",
+      "Keep your website accurate and up to date as your business changes.",
+    fullDescription:
+      "Ideal for occasional content changes without needing a full maintenance plan.",
     includedItems: [
       "Updating service information",
       "Replacing images",

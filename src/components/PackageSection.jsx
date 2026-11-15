@@ -57,7 +57,7 @@ function PackageCard({ details, currency, onChoose }) {
           inert={!expanded}
         >
           <div className="package-details-inner">
-            <p className="package-includes-label">Everything included</p>
+            <p className="package-includes-label">{details.includesHeading}</p>
             <ul className="check-list">
               {details.features.map((feature, index) => (
                 <li key={`${details.name}-${index}`}>{feature}</li>
