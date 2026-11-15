@@ -72,10 +72,6 @@ function Hero() {
           </div>
         </div>
       </div>
-      
-      <a className="scroll-cue" href="#about">
-        Scroll to explore
-      </a>
     </section>
   );
 }
