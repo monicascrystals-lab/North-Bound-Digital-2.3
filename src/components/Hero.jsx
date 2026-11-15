@@ -1,4 +1,6 @@
 
+import { useEffect, useRef, useState } from "react";
+
 const backgroundVideo =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260723_145606_ab143199-b593-4941-bb1b-9afca215416b.mp4";
 
@@ -19,12 +21,30 @@ function ArrowIcon() {
 }
 
 function Hero() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    mediaQuery.addEventListener("change", updateMotionPreference);
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference);
+  }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion) videoRef.current?.pause();
+  }, [prefersReducedMotion]);
+
   return (
     <section className="hero" id="home" aria-labelledby="hero-title">
       <video
+        ref={videoRef}
         className="hero-video"
-        autoPlay
-        loop
+        autoPlay={!prefersReducedMotion}
+        loop={!prefersReducedMotion}
         muted
         playsInline
         aria-hidden="true"
