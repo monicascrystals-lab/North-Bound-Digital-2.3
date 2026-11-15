@@ -548,6 +548,10 @@ h3 {
   background: var(--main-background);
 }
 
+.legal-page ~ .whatsapp-button {
+  display: none;
+}
+
 .legal-content {
   max-width: 860px;
   margin: 0 auto;
@@ -855,6 +859,10 @@ h3 {
 .section-pad {
   padding: clamp(84px, 10vw, 144px) var(--page-gutter);
   scroll-margin-top: 72px;
+}
+
+.legal-page.section-pad {
+  padding-top: clamp(136px, 10vw, 160px);
 }
 
 .section-heading {
@@ -1680,7 +1688,7 @@ a:focus-visible {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #84919b;
+  color: var(--slate);
 }
 
 .form-submit {
