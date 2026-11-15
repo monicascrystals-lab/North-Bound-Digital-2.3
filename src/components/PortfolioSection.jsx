@@ -134,15 +134,6 @@ function PortfolioSection() {
           description="A thoughtful website starts with a clear picture of where you want your business to go."
         />
 <div className="portfolio-project">
-  <div className="portfolio-project-info">
-    <p className="portfolio-label">{brightSparkProject.type}</p>
-    <h3>{brightSparkProject.title}</h3>
-    <p>
-      A responsive one-page website concept created for a local electrical
-      services business.
-    </p>
-  </div>
-
   <div className="portfolio-card">
   <img
     src={brightSparkProject.images[0]}
