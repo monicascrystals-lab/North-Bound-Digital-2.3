@@ -1922,7 +1922,7 @@ a:focus-visible {
 }
 
 .portfolio-card {
-  background: #ffffff;
+  background: var(--white);
   border-radius: 28px;
   padding: 26px;
   overflow: hidden;
@@ -1952,7 +1952,7 @@ a:focus-visible {
   font: inherit;
   font-weight: 700;
   cursor: pointer;
-  color: #15324a;
+  color: var(--navy);
 }
 
 /* Full website preview popup */
@@ -1970,7 +1970,7 @@ a:focus-visible {
   position: relative;
   width: min(970px, 95%);
   margin: 0 auto;
-  background: #ffffff;
+  background: var(--white);
   border-radius: 20px;
   padding: 30px;
 }
@@ -1988,8 +1988,8 @@ a:focus-visible {
   height: 44px;
   border: none;
   border-radius: 50%;
-  background: #15324a;
-  color: white;
+  background: var(--navy);
+  color: var(--white);
   font-size: 28px;
   cursor: pointer;
 }
