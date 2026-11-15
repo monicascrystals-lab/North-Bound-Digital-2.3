@@ -1,3 +1,5 @@
+import LegalDocument from "./LegalDocument.jsx";
+
 const privacyPolicyMarkdown = String.raw`# PRIVACY POLICY
 **North Bound Digital**
 Operated by Monica Frances Cruywagen, a sole proprietor trading as North Bound Digital
@@ -505,72 +507,8 @@ Consent will not be treated as valid where applicable law requires a separate, s
 
 By voluntarily providing personal information to North Bound Digital for an enquiry or project, the person acknowledges that North Bound Digital may process that information for the purposes explained in this Privacy Policy and as otherwise permitted by law.`;
 
-function renderInline(text) {
-  const tokens = text.split(/(\*\*.+?\*\*)/g);
-
-  return tokens.map((token, index) => {
-    if (token.startsWith("**") && token.endsWith("**")) {
-      return <strong key={index}>{token.slice(2, -2)}</strong>;
-    }
-
-    return token;
-  });
-}
-
-function renderMarkdown(markdown) {
-  const lines = markdown.split("\n");
-  const elements = [];
-
-  for (let index = 0; index < lines.length; ) {
-    const line = lines[index];
-
-    if (!line.trim()) {
-      index += 1;
-      continue;
-    }
-
-    const heading = line.match(/^(#{1,3}) (.+)$/);
-    if (heading) {
-      const Heading = `h${heading[1].length}`;
-      elements.push(
-        <Heading key={index}>{renderInline(heading[2])}</Heading>,
-      );
-      index += 1;
-      continue;
-    }
-
-    if (line.startsWith("- ")) {
-      const items = [];
-      while (index < lines.length && lines[index].startsWith("- ")) {
-        items.push(
-          <li key={index}>{renderInline(lines[index].slice(2))}</li>,
-        );
-        index += 1;
-      }
-      elements.push(<ul key={`list-${index}`}>{items}</ul>);
-      continue;
-    }
-
-    const paragraph = [];
-    while (
-      index < lines.length &&
-      lines[index].trim() &&
-      !/^#{1,3} /.test(lines[index]) &&
-      !lines[index].startsWith("- ")
-    ) {
-      paragraph.push(lines[index]);
-      index += 1;
-    }
-    elements.push(
-      <p key={`paragraph-${index}`}>{renderInline(paragraph.join(" "))}</p>,
-    );
-  }
-
-  return elements;
-}
-
 function PrivacyPolicy() {
-  return <article className="legal-content">{renderMarkdown(privacyPolicyMarkdown)}</article>;
+  return <LegalDocument markdown={privacyPolicyMarkdown} />;
 }
 
 export default PrivacyPolicy;
