@@ -1,5 +1,5 @@
 import logo from "../assets/northbound-logo.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navigationItems = [
   ["Home", "#home"],
@@ -13,6 +13,8 @@ const navigationItems = [
 function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 800);
+  const menuToggleRef = useRef(null);
 
   useEffect(() => {
     function updateHeader() {
@@ -29,22 +31,29 @@ function SiteHeader() {
     return () => document.body.classList.remove("menu-open");
   }, [menuOpen]);
 
+  function closeMenu() {
+    setMenuOpen(false);
+    requestAnimationFrame(() => menuToggleRef.current?.focus());
+  }
+
   useEffect(() => {
     function closeOnEscape(event) {
-      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key === "Escape" && menuOpen) closeMenu();
     }
 
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
-  }, []);
+  }, [menuOpen]);
 
   useEffect(() => {
-    function closeOnDesktop() {
-      if (window.innerWidth > 800) setMenuOpen(false);
+    function updateMenuMode() {
+      const mobile = window.innerWidth <= 800;
+      setIsMobile(mobile);
+      if (!mobile) setMenuOpen(false);
     }
 
-    window.addEventListener("resize", closeOnDesktop);
-    return () => window.removeEventListener("resize", closeOnDesktop);
+    window.addEventListener("resize", updateMenuMode);
+    return () => window.removeEventListener("resize", updateMenuMode);
   }, []);
 
   return (
@@ -58,12 +67,13 @@ function SiteHeader() {
   />
 </a>
         <button
+          ref={menuToggleRef}
           className="menu-toggle"
           type="button"
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
-          onClick={() => setMenuOpen((open) => !open)}
+          onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
         >
           <svg
             viewBox="0 0 24 24"
@@ -79,10 +89,12 @@ function SiteHeader() {
         <ul
           className={`nav-links${menuOpen ? " open" : ""}`}
           id="primary-navigation"
+          inert={isMobile && !menuOpen ? "" : undefined}
+          aria-hidden={isMobile && !menuOpen ? "true" : undefined}
         >
           {navigationItems.map(([label, href]) => (
             <li key={href}>
-              <a href={href} onClick={() => setMenuOpen(false)}>
+              <a href={href} onClick={() => isMobile && closeMenu()}>
                 {label}
               </a>
             </li>
