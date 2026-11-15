@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import brightspark1 from "../assets/portfolio/brightspark/brightspark-1.png";
 import brightspark2 from "../assets/portfolio/brightspark/brightspark-2.png";
@@ -53,8 +54,71 @@ const stillAndSageProject = {
 };
 
 function PortfolioSection() {
-  const [showBrightSpark, setShowBrightSpark] = useState(false);
-  const [showStillAndSage, setShowStillAndSage] = useState(false);
+  const [activeProject, setActiveProject] = useState(null);
+  const openerRef = useRef(null);
+  const modalRef = useRef(null);
+  const closeButtonRef = useRef(null);
+
+  useEffect(() => {
+    if (!activeProject) {
+      openerRef.current?.focus();
+      return undefined;
+    }
+
+    const appRoot = document.getElementById("root");
+    appRoot?.setAttribute("inert", "");
+    appRoot?.setAttribute("aria-hidden", "true");
+    closeButtonRef.current?.focus();
+
+    return () => {
+      appRoot?.removeAttribute("inert");
+      appRoot?.removeAttribute("aria-hidden");
+    };
+  }, [activeProject]);
+
+  function openProject(project, event) {
+    openerRef.current = event.currentTarget;
+    setActiveProject(project);
+  }
+
+  function closeProject() {
+    setActiveProject(null);
+  }
+
+  function handleModalKeyDown(event) {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeProject();
+      return;
+    }
+
+    if (event.key !== "Tab") {
+      return;
+    }
+
+    const focusable = Array.from(
+      modalRef.current?.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      ) ?? [],
+    );
+
+    if (focusable.length === 0) {
+      event.preventDefault();
+      return;
+    }
+
+    const firstFocusable = focusable[0];
+    const lastFocusable = focusable[focusable.length - 1];
+
+    if (
+      event.shiftKey
+        ? document.activeElement === firstFocusable
+        : document.activeElement === lastFocusable
+    ) {
+      event.preventDefault();
+      (event.shiftKey ? lastFocusable : firstFocusable).focus();
+    }
+  }
   
   return (
     <section
@@ -98,7 +162,7 @@ function PortfolioSection() {
     <button
   type="button"
   className="portfolio-view-button"
-  onClick={() => setShowBrightSpark(true)}
+  onClick={(event) => openProject(brightSparkProject, event)}
 >
   View Project
 </button>
@@ -124,67 +188,52 @@ function PortfolioSection() {
     <button
       type="button"
       className="portfolio-view-button"
-      onClick={() => setShowStillAndSage(true)}
+      onClick={(event) => openProject(stillAndSageProject, event)}
     >
       View Project
     </button>
   </div>
 </div>
 
-</div> 
-{showBrightSpark && (
-  <div className="portfolio-modal">
-    <div className="portfolio-modal-content">
-      <button
-        type="button"
-        className="portfolio-modal-close"
-        onClick={() => setShowBrightSpark(false)}
-      >
-        ×
-      </button>
-
-      <h3>{brightSparkProject.title}</h3>
-
-      <div className="portfolio-modal-gallery">
-        {brightSparkProject.images.map((image, index) => (
-          <img
-            key={image}
-            src={image}
-            alt={`BrightSpark Electrical website screenshot ${index + 1}`}
-          />
-        ))}
+        </div>
       </div>
-    </div>
-  </div>
-)}
 
-{showStillAndSage && (
-  <div className="portfolio-modal">
-    <div className="portfolio-modal-content">
-      <button
-        type="button"
-        className="portfolio-modal-close"
-        onClick={() => setShowStillAndSage(false)}
-      >
-        ×
-      </button>
+      {activeProject &&
+        createPortal(
+          <div
+            ref={modalRef}
+            className="portfolio-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="portfolio-modal-title"
+            onKeyDown={handleModalKeyDown}
+          >
+            <div className="portfolio-modal-content">
+              <button
+                ref={closeButtonRef}
+                type="button"
+                className="portfolio-modal-close"
+                aria-label="Close project preview"
+                onClick={closeProject}
+              >
+                ×
+              </button>
 
-      <h3>{stillAndSageProject.title}</h3>
+              <h3 id="portfolio-modal-title">{activeProject.title}</h3>
 
-      <div className="portfolio-modal-gallery">
-        {stillAndSageProject.images.map((image, index) => (
-          <img
-            key={image}
-            src={image}
-            alt={`Still & Sage Wellness Studio website screenshot ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-)}
-
- </div>
+              <div className="portfolio-modal-gallery">
+                {activeProject.images.map((image, index) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt={`${activeProject.title} website screenshot ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </section>
   );
 }
