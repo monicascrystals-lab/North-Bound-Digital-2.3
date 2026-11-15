@@ -58,6 +58,9 @@ function SiteHeader() {
 
   return (
     <header className={`site-header${scrolled ? " scrolled" : ""}`}>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <nav className="nav-wrap" aria-label="Main navigation">
        <a className="brand" href="#home" aria-label="Northbound Digital home">
   <img
@@ -89,7 +92,7 @@ function SiteHeader() {
         <ul
           className={`nav-links${menuOpen ? " open" : ""}`}
           id="primary-navigation"
-          inert={isMobile && !menuOpen ? "" : undefined}
+          inert={isMobile && !menuOpen}
           aria-hidden={isMobile && !menuOpen ? "true" : undefined}
         >
           {navigationItems.map(([label, href]) => (

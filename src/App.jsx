@@ -4,6 +4,7 @@ import ContactSection from "./components/ContactSection.jsx";
 import Hero from "./components/Hero.jsx";
 import PackageSection from "./components/PackageSection.jsx";
 import PortfolioSection from "./components/PortfolioSection.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 import ServicesSection from "./components/ServicesSection.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
 import SiteHeader from "./components/SiteHeader.jsx";
@@ -17,7 +18,7 @@ const legalPages = {
   },
   "#privacy-policy": {
     title: "Privacy Policy",
-    content: "Privacy Policy content will be added here.",
+    component: PrivacyPolicy,
   },
 };
 
@@ -58,12 +59,16 @@ function App() {
   }
 
   if (legalPage) {
+    const LegalPageContent = legalPage.component;
+
     return (
       <>
         <SiteHeader />
-        <main className="legal-page section-pad">
+        <main className="legal-page section-pad" id="main-content" tabIndex="-1">
           <div className="content-width">
-            {legalPage.content ? (
+            {LegalPageContent ? (
+              <LegalPageContent />
+            ) : legalPage.content ? (
               <>
                 <h1>{legalPage.title}</h1>
                 <p>{legalPage.content}</p>
@@ -83,7 +88,7 @@ function App() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex="-1">
         <Hero />
         <AboutSection />
         <ServicesSection />
