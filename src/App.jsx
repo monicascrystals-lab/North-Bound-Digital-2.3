@@ -3,6 +3,7 @@ import AboutSection from "./components/AboutSection.jsx";
 import BackToTopButton from "./components/BackToTopButton.jsx";
 import ContactSection from "./components/ContactSection.jsx";
 import CookieConsent from "./components/CookieConsent.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 import Hero from "./components/Hero.jsx";
 import PackageSection from "./components/PackageSection.jsx";
 import PortfolioSection from "./components/PortfolioSection.jsx";
@@ -79,6 +80,7 @@ function App() {
 
     return (
       <>
+        <CustomCursor />
         <SiteHeader />
         <main className="legal-page section-pad" id="main-content" tabIndex="-1">
           <div className="content-width">
@@ -110,6 +112,7 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
       <SiteHeader />
       <main id="main-content" tabIndex="-1">
         <Hero />

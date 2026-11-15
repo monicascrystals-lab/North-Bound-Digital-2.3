@@ -55,6 +55,8 @@ function ContactSection({ selectedPackage, onPackageChange }) {
             <div className="contact-email-block">
               <span>Email</span>
               <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              <span>Phone</span>
+              <a href="tel:+27766115666">076 611 5666</a>
             </div>
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
