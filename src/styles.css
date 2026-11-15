@@ -1764,6 +1764,10 @@ a:focus-visible {
   .portfolio-empty > .text-link {
     grid-column: 2;
   }
+
+  .expand-link {
+    min-height: 44px;
+  }
 }
 
 @media (max-width: 560px) {
