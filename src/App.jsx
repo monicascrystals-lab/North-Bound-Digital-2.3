@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AboutSection from "./components/AboutSection.jsx";
 import BackToTopButton from "./components/BackToTopButton.jsx";
 import ContactSection from "./components/ContactSection.jsx";
+import CookieConsent from "./components/CookieConsent.jsx";
 import Hero from "./components/Hero.jsx";
 import PackageSection from "./components/PackageSection.jsx";
 import PortfolioSection from "./components/PortfolioSection.jsx";
@@ -11,6 +12,8 @@ import SiteFooter from "./components/SiteFooter.jsx";
 import SiteHeader from "./components/SiteHeader.jsx";
 import TermsAndConditions from "./components/TermsAndConditions.jsx";
 import WhatsAppButton from "./components/WhatsAppButton.jsx";
+import { getCookieConsent, saveCookieConsent } from "./lib/cookieConsent.js";
+import { loadGoogleAnalytics, updateAnalyticsConsent } from "./lib/googleAnalytics.js";
 
 const legalPages = {
   "#terms-and-conditions": {
@@ -30,6 +33,8 @@ function getLegalPage() {
 function App() {
   const [selectedPackage, setSelectedPackage] = useState("");
   const [legalPage, setLegalPage] = useState(getLegalPage);
+  const [cookieConsent, setCookieConsent] = useState(getCookieConsent);
+  const [cookiePreferencesOpen, setCookiePreferencesOpen] = useState(false);
 
   useEffect(() => {
     let wasLegalPage = Boolean(getLegalPage());
@@ -54,9 +59,19 @@ function App() {
     return () => window.removeEventListener("hashchange", syncPageWithHash);
   }, []);
 
+  useEffect(() => {
+    const analyticsGranted = cookieConsent?.analytics === true;
+    updateAnalyticsConsent(analyticsGranted);
+    if (analyticsGranted) loadGoogleAnalytics();
+  }, [cookieConsent]);
+
   function choosePackage(packageName) {
     setSelectedPackage(packageName);
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function updateCookieConsent(analytics) {
+    setCookieConsent(saveCookieConsent(analytics));
   }
 
   if (legalPage) {
@@ -80,7 +95,13 @@ function App() {
             <a href="#home">Return to Northbound Digital</a>
           </div>
         </main>
-        <SiteFooter />
+        <SiteFooter onOpenCookieSettings={() => setCookiePreferencesOpen(true)} />
+        <CookieConsent
+          consent={cookieConsent}
+          openPreferences={cookiePreferencesOpen}
+          onPreferencesOpened={() => setCookiePreferencesOpen(false)}
+          onSave={updateCookieConsent}
+        />
         <BackToTopButton />
         <WhatsAppButton />
       </>
@@ -101,7 +122,13 @@ function App() {
           onPackageChange={setSelectedPackage}
         />
       </main>
-      <SiteFooter />
+      <SiteFooter onOpenCookieSettings={() => setCookiePreferencesOpen(true)} />
+      <CookieConsent
+        consent={cookieConsent}
+        openPreferences={cookiePreferencesOpen}
+        onPreferencesOpened={() => setCookiePreferencesOpen(false)}
+        onSave={updateCookieConsent}
+      />
       <BackToTopButton />
       <WhatsAppButton />
     </>

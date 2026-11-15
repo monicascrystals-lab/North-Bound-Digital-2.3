@@ -1,7 +1,7 @@
 import LegalDocument from "./LegalDocument.jsx";
 
 const termsMarkdown = String.raw`# TERMS AND CONDITIONS
-**North Bound Digital**
+**North Bound Digital™**
 Operated by **Monica Frances Cruywagen**, a sole proprietor trading as North Bound Digital
 
 Website: **northbounddigital.co.za**

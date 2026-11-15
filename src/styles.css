@@ -553,13 +553,131 @@ h3 {
 }
 
 .footer-contact-links a,
-.footer-legal-links a {
+.footer-legal-links a,
+.footer-cookie-settings {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
   text-decoration: none;
 }
 
 .footer-contact-links a:hover,
-.footer-legal-links a:hover {
+.footer-legal-links a:hover,
+.footer-cookie-settings:hover {
   color: var(--white);
+}
+
+.footer-cookie-settings:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+.cookie-banner {
+  position: fixed;
+  z-index: 70;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  width: min(460px, calc(100vw - 32px));
+  padding: 22px;
+  border: 1px solid rgba(21, 50, 74, 0.2);
+  background: var(--white);
+  box-shadow: 0 14px 36px rgba(21, 50, 74, 0.16);
+  color: var(--charcoal);
+}
+
+.cookie-banner h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 600 20px/1.2 var(--heading-font);
+}
+
+.cookie-banner > p {
+  margin: 10px 0 18px;
+  color: var(--slate);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cookie-button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--navy);
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+  font: 600 12px/1.2 var(--heading-font);
+}
+
+.cookie-button-primary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.cookie-button-text {
+  border-color: transparent;
+}
+
+.cookie-button:focus-visible,
+.cookie-privacy-link:focus-visible,
+.cookie-option-toggle:has(input:focus-visible) {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.cookie-privacy-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.cookie-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(21, 50, 74, 0.12);
+  color: var(--slate);
+  font-size: 13px;
+}
+
+.cookie-option strong,
+.cookie-option small,
+.cookie-option span {
+  display: block;
+}
+
+.cookie-option strong {
+  color: var(--navy);
+}
+
+.cookie-option small {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cookie-option-toggle {
+  cursor: pointer;
+}
+
+.cookie-option input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--teal);
 }
 
 .legal-page {
