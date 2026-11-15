@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AboutSection from "./components/AboutSection.jsx";
+import BackToTopButton from "./components/BackToTopButton.jsx";
 import ContactSection from "./components/ContactSection.jsx";
 import Hero from "./components/Hero.jsx";
 import PackageSection from "./components/PackageSection.jsx";
@@ -80,6 +81,7 @@ function App() {
           </div>
         </main>
         <SiteFooter />
+        <BackToTopButton />
         <WhatsAppButton />
       </>
     );
@@ -100,6 +102,7 @@ function App() {
         />
       </main>
       <SiteFooter />
+      <BackToTopButton />
       <WhatsAppButton />
     </>
   );

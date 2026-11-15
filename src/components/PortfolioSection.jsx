@@ -220,6 +220,8 @@ function PortfolioSection() {
                     key={image}
                     src={image}
                     alt={`${activeProject.title} website screenshot ${index + 1}`}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
                   />
                 ))}
               </div>
