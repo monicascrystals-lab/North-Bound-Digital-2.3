@@ -7,12 +7,13 @@ import PortfolioSection from "./components/PortfolioSection.jsx";
 import ServicesSection from "./components/ServicesSection.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
 import SiteHeader from "./components/SiteHeader.jsx";
+import TermsAndConditions from "./components/TermsAndConditions.jsx";
 import WhatsAppButton from "./components/WhatsAppButton.jsx";
 
 const legalPages = {
   "#terms-and-conditions": {
     title: "Terms and Conditions",
-    content: "Terms and Conditions content will be added here.",
+    content: null,
   },
   "#privacy-policy": {
     title: "Privacy Policy",
@@ -62,8 +63,14 @@ function App() {
         <SiteHeader />
         <main className="legal-page section-pad">
           <div className="content-width">
-            <h1>{legalPage.title}</h1>
-            <p>{legalPage.content}</p>
+            {legalPage.content ? (
+              <>
+                <h1>{legalPage.title}</h1>
+                <p>{legalPage.content}</p>
+              </>
+            ) : (
+              <TermsAndConditions />
+            )}
             <a href="#home">Return to Northbound Digital</a>
           </div>
         </main>

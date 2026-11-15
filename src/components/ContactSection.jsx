@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SectionHeading from "./SectionHeading.jsx";
 
-const contactEmail = "info@northbounddigital.co.za";
+const contactEmail = "studio@northbounddigital.co.za";
 const packageOptions = [
   "Starter Package",
   "Essential Package",

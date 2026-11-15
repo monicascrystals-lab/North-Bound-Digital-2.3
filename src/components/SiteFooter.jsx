@@ -4,8 +4,8 @@ function SiteFooter() {
       <div className="footer-inner">
         <span>© {new Date().getFullYear()} Northbound Digital. All rights reserved.</span>
         <div className="footer-contact-links">
-          <a href="mailto:info@northbounddigital.co.za">
-            info@northbounddigital.co.za
+          <a href="mailto:studio@northbounddigital.co.za">
+            studio@northbounddigital.co.za
           </a>
           <a href="tel:+27766115666">Phone: 076 611 5666</a>
         </div>
