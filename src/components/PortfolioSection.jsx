@@ -148,6 +148,7 @@ function PortfolioSection() {
     src={brightSparkProject.images[0]}
     alt="BrightSpark Electrical website preview"
     className="portfolio-cover"
+    loading="lazy"
   />
 
   <div className="portfolio-card-content">
@@ -174,6 +175,7 @@ function PortfolioSection() {
     src={stillAndSageProject.images[0]}
     alt="Still & Sage Wellness Studio website preview"
     className="portfolio-cover"
+    loading="lazy"
   />
 
   <div className="portfolio-card-content">
