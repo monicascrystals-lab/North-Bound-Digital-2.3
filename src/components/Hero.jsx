@@ -55,10 +55,10 @@ function Hero() {
         <div className="hero-copy">
           <p className="eyebrow reveal">DESIGN WITH DIRECTION</p>
           <h1 className="reveal reveal-delay" id="hero-title">
-            Websites Built To Move Your Business Forward.
+            Professional Websites Built to Move Your Business Forward.
           </h1>
           <p className="hero-description reveal reveal-late">
-            Professional, SEO-ready websites created to help your business get found, build trust and generate more leads.
+            SEO-ready websites designed to help small businesses build trust, get found on Google and generate more enquiries.
           </p>
           <div className="hero-actions reveal reveal-late">
             <a className="button button-primary" href="#portfolio">

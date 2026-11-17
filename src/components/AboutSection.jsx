@@ -6,17 +6,20 @@ const principles = [
   {
     number: "01",
     title: "Look credible",
-    description: "Make your business feel established from the first click.",
+    description:
+      "Build a professional online presence that makes your business feel established and trustworthy from the first click.",
   },
   {
     number: "02",
     title: "Be understood",
-    description: "Clear structure, clear messaging and no unnecessary confusion.",
+    description:
+      "Clear website structure and messaging that helps visitors quickly understand what your business offers.",
   },
   {
     number: "03",
     title: "Move people forward",
-    description: "Guide visitors towards the action that matters most.",
+    description:
+      "Guide visitors towards meaningful actions such as contacting you, requesting a quote or booking your service.",
   },
 ];
 
@@ -38,8 +41,8 @@ function AboutSection() {
 </h2>
           
           <p className="section-description">
-            Websites built to move your business forward, strengthen your
-            presence, and put you firmly on the map.
+            Professional websites built to move your business forward, strengthen your online
+            presence, and turn visitors into customers.
           </p>
         </div>
         <div className="principle-grid">
