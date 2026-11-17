@@ -9,7 +9,8 @@ const packageOptions = [
   "Professional Package",
   "Website Redesign",
   "One-Page Website",
-  "Ecommerce Website",
+  "Domain, SEO and Hosting setup",
+  "Logo design and redesign",
   "Custom Website",
   "Not Sure Yet",
 ];

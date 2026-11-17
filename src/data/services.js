@@ -54,23 +54,11 @@ const services = [
     icon: "refresh",
   },
   {
-    title: "Mobile-Friendly Website Design",
+    title: "Domain, SEO & Hosting Setup",
     shortDescription:
-      "Websites designed to work smoothly across mobile phones, tablets, laptops and desktops.",
+      "A strong technical SEO foundation, with help connecting your website to a domain and getting it published online.",
     fullDescription:
-      "Responsive layouts help visitors get a professional experience regardless of the device they are using.",
-    includedItems: [],
-    includedMessage: "Included with website projects",
-    priceZA: "R1,500",
-    priceInternational: "US$150",
-    priceNote: "For standalone responsive optimisation of an existing website.",
-    icon: "devices",
-  },
-  {
-    title: "Basic SEO Setup",
-    shortDescription:
-      "A strong technical SEO foundation to help search engines understand your website.",
-    fullDescription: "Includes basic on-page SEO setup such as:",
+      "Setup includes basic on-page SEO, domain connection and hosting configuration such as:",
     includedItems: [
       "Page titles",
       "Meta descriptions",
@@ -79,17 +67,6 @@ const services = [
       "Clean page structure",
       "Sitemap setup",
       "Google Search Console setup where required",
-    ],
-    priceZA: "R1,500",
-    priceInternational: "US$150",
-    icon: "search",
-  },
-  {
-    title: "Domain & Hosting Setup",
-    shortDescription:
-      "Help getting your website connected to your domain and published online.",
-    fullDescription: "Setup can include:",
-    includedItems: [
       "Domain connection",
       "DNS setup",
       "Hosting configuration",
