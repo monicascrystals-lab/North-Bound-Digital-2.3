@@ -7,10 +7,18 @@ const packageOptions = [
   "Business website (up to 6 pages)",
   "Professional website (up to 10 pages)",
   "Website Redesign",
+<<<<<<< HEAD
   "SEO & Launch Setup",
   "Website Care & Updates",
   "Logo & Branding",
   "Not sure yet, help me choose",
+=======
+  "One-Page Website",
+  "Domain, SEO and Hosting setup",
+  "Logo design and redesign",
+  "Custom Website",
+  "Not Sure Yet",
+>>>>>>> b9e725e433316435946e00d5ad3221e6d447ee24
 ];
 
 function ContactSection({ selectedPackage, onPackageChange }) {

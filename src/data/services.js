@@ -39,6 +39,7 @@ const services = [
     icon: "refresh",
   },
   {
+<<<<<<< HEAD
     title: "SEO & LAUNCH SETUP",
     shortDescription:
       "Help search engines find your website and get it connected, secure and live.",
@@ -110,6 +111,27 @@ const services = [
         ],
         note: "Larger updates are quoted according to scope.",
       },
+=======
+    title: "Domain, SEO & Hosting Setup",
+    shortDescription:
+      "A strong technical SEO foundation, with help connecting your website to a domain and getting it published online.",
+    fullDescription:
+      "Setup includes basic on-page SEO, domain connection and hosting configuration such as:",
+    includedItems: [
+      "Page titles",
+      "Meta descriptions",
+      "Proper heading structure",
+      "Image alt text",
+      "Clean page structure",
+      "Sitemap setup",
+      "Google Search Console setup where required",
+      "Domain connection",
+      "DNS setup",
+      "Hosting configuration",
+      "SSL / HTTPS setup",
+      "Website deployment",
+      "Basic launch checks",
+>>>>>>> b9e725e433316435946e00d5ad3221e6d447ee24
     ],
     priceNote:
       "Post-launch support in your website package covers technical fixes only. A care plan continues your support after it ends.",

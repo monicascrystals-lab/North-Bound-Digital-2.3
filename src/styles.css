@@ -582,7 +582,7 @@ h3 {
   padding: 24px var(--page-gutter) 88px;
   background: #10283a;
   color: rgba(255, 255, 255, 0.65);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .footer-inner {
@@ -1661,7 +1661,7 @@ a:focus-visible {
 .package-support-note {
   margin: 16px 0 0;
   color: var(--slate);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -1685,7 +1685,7 @@ a:focus-visible {
 .domain-note p {
   margin: 0;
   color: var(--slate);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -1699,7 +1699,7 @@ a:focus-visible {
 .domain-note-label {
   margin-bottom: 6px !important;
   color: var(--navy) !important;
-  font: 600 12px/1.4 var(--heading-font) !important;
+  font: 600 14px/1.4 var(--heading-font) !important;
 }
 
 .domain-note strong {
@@ -2067,6 +2067,28 @@ a:focus-visible {
 
   .package-description {
     margin-bottom: 16px;
+  }
+
+  .packages-section .package-description {
+    font-size: 15px;
+  }
+
+  .packages-section .currency-control label,
+  .packages-section .package-pages,
+  .packages-section .package-highlights li,
+  .packages-section .check-list li,
+  .packages-section .package-includes-label,
+  .packages-section .package-choose {
+    font-size: 14px;
+  }
+
+  .packages-section .package-price span,
+  .packages-section .package-expand {
+    font-size: 13px;
+  }
+
+  .packages-section .care-card p:not(.care-price) {
+    font-size: 15px;
   }
 
   .pricing-notes,
