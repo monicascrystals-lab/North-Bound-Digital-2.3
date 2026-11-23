@@ -2,6 +2,12 @@ import { useState } from "react";
 import packages, { currencies } from "../data/packages.js";
 import SectionHeading from "./SectionHeading.jsx";
 
+const packageFormOptions = {
+  Essential: "Essential website (up to 3 pages)",
+  Business: "Business website (up to 6 pages)",
+  Professional: "Professional website (up to 10 pages)",
+};
+
 function formatPrice(amount, symbol) {
   return `${symbol}${amount.toLocaleString("en-US")}`;
 }
@@ -34,7 +40,7 @@ function PackageCard({ details, currency, onChoose }) {
         <button
           className="button button-primary package-choose"
           type="button"
-          onClick={() => onChoose(`${details.name} Package`)}
+          onClick={() => onChoose(packageFormOptions[details.name])}
         >
           Choose {details.name} <span aria-hidden="true">→</span>
         </button>

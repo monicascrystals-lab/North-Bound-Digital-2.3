@@ -3,14 +3,14 @@ import SectionHeading from "./SectionHeading.jsx";
 
 const contactEmail = "studio@northbounddigital.co.za";
 const packageOptions = [
-  "Essential Package",
-  "Business Package",
-  "Professional Package",
+  "Essential website (up to 3 pages)",
+  "Business website (up to 6 pages)",
+  "Professional website (up to 10 pages)",
   "Website Redesign",
-  "One-Page Website",
-  "Ecommerce Website",
-  "Custom Website",
-  "Not Sure Yet",
+  "SEO & Launch Setup",
+  "Website Care & Updates",
+  "Logo & Branding",
+  "Not sure yet, help me choose",
 ];
 
 function ContactSection({ selectedPackage, onPackageChange }) {
@@ -23,7 +23,7 @@ function ContactSection({ selectedPackage, onPackageChange }) {
     const message = [
       `Name: ${formData.get("name")}`,
       `Email: ${formData.get("email")}`,
-      `Website package: ${formData.get("package") || "Not selected"}`,
+      `What do you need?: ${formData.get("package") || "Not selected"}`,
       "",
       "Project details:",
       formData.get("message"),
@@ -81,7 +81,7 @@ function ContactSection({ selectedPackage, onPackageChange }) {
               </label>
             </div>
             <label>
-              Website Package
+              What do you need?
               <select
                 name="package"
                 value={selectedPackage}

@@ -1198,12 +1198,13 @@ h3 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 16px;
 }
 
 .service-card {
   display: flex;
+  grid-column: span 2;
   min-width: 0;
   flex-direction: column;
   padding: 27px 26px 22px;
@@ -1213,6 +1214,14 @@ h3 {
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease;
+}
+
+.service-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.service-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .service-card:hover,
@@ -1279,28 +1288,12 @@ h3 {
   line-height: 1.65;
 }
 
-.service-details-inner > p {
-  margin: 0 0 12px;
-}
-
-.service-included-message {
-  margin: 12px 0 0;
-  color: var(--navy);
-  font-weight: 600;
-}
-
 .service-pricing {
   display: grid;
   gap: 3px;
   padding-top: 12px;
   margin-top: 14px;
   border-top: 1px solid rgba(21, 50, 74, 0.12);
-}
-
-.service-pricing-label {
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 600;
 }
 
 .service-pricing-availability {
@@ -1313,6 +1306,11 @@ h3 {
   color: var(--navy);
   font-size: 14px;
   font-weight: 600;
+}
+
+.service-package-link {
+  justify-self: start;
+  margin-top: 9px;
 }
 
 .service-pricing-note {
@@ -1929,7 +1927,19 @@ a:focus-visible {
 
 @media (max-width: 1050px) {
   .service-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .service-card {
+    grid-column: span 2;
+  }
+
+  .service-card:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  .service-card:nth-child(5) {
+    grid-column: 2 / span 2;
   }
 
   .package-grid {
@@ -2024,6 +2034,12 @@ a:focus-visible {
   .service-grid,
   .package-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .service-card:nth-child(4),
+  .service-card:nth-child(5) {
+    grid-column: auto;
   }
 
   .package-grid > .package-card:last-child {
