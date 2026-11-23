@@ -24,7 +24,7 @@ import SectionHeading from "./SectionHeading.jsx";
 
 const brightSparkProject = {
   title: "BrightSpark Electrical",
-  type: "Starter Package • Concept Project",
+  type: "Essential Package • Concept Project",
   images: [
     brightspark1,
     brightspark2,
@@ -37,7 +37,7 @@ const brightSparkProject = {
 
 const stillAndSageProject = {
   title: "Still & Sage Wellness Studio",
-  type: "Essential Package • Concept Project",
+  type: "Business Package • Concept Project",
   images: [
     stillnsage1,
     stillnsage2,

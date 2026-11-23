@@ -112,6 +112,10 @@ function PackageSection({ onChoosePackage }) {
             />
           ))}
         </div>
+        <p className="package-support-note">
+          Support covers technical fixes and bug resolution. New content, new
+          pages and design changes are quoted separately.
+        </p>
         <div className="pricing-notes">
           <p>
             Prices shown are starting prices. Final pricing may vary depending
