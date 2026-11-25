@@ -11,9 +11,9 @@ const services = [
       "SSL, Google Search Console and sitemap setup",
       "Revision rounds and post-launch support included",
     ],
-    priceLine: "Starting from R3,500 / US$950",
+    priceLine: "Starting from R3,500 / $599 / £449 / €549 / A$899 / NZ$999 / C$799",
     priceDetails: [
-      "Essential R3,500 / US$950 · Business R6,900 / US$1,850 · Professional R12,500 / US$3,500",
+      "Essential R3,500 / $599 / £449 / €549 / A$899 / NZ$999 / C$799 · Business R6,900 / $1,199 / £899 / €1,099 / A$1,799 / NZ$1,999 / C$1,599 · Professional R12,500 / $1,999 / £1,499 / €1,849 / A$2,999 / NZ$3,299 / C$2,599",
     ],
     packageLink: { label: "View Packages", href: "#packages" },
     icon: "layers",
@@ -29,7 +29,7 @@ const services = [
       "Stronger calls-to-action",
       "Performance improvements",
     ],
-    priceLine: "Starting from R3,500 / US$950 (up to 3 pages)",
+    priceLine: "Starting from R3,500 / $599 / £449 / €549 / A$899 / NZ$999 / C$799 (up to 3 pages)",
     priceDetails: [
       "Larger redesigns follow Business and Professional package pricing.",
       "Mobile-only fix for an existing website: from R2,000 / US$400",
