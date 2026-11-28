@@ -1053,9 +1053,33 @@ h3 {
   .faq-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 767px) {
+  .monthly-grid {
+    align-items: start;
+  }
+
+  .monthly-grid .pricing-service-card {
+    width: 100%;
+  }
+
+  .recurring-services {
+    padding-bottom: 72px !important;
+  }
 
   .pricing-subsections > section {
     padding: 22px 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .monthly-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .monthly-grid .pricing-service-card {
+    min-width: 0;
   }
 }
 

@@ -6,7 +6,7 @@ Operated by **Monica Frances Cruywagen**, a sole proprietor trading as North Bou
 
 Website: **northbounddigital.co.za**
 Email: [**studio@northbounddigital.co.za**](mailto:studio@northbounddigital.co.za)
-Telephone / WhatsApp: **076 611 5666**
+Telephone / WhatsApp: **+27 76 611 5666**
 
 **Last updated: 15 November 2026**
 
@@ -38,7 +38,7 @@ Website: **northbounddigital.co.za**
 
 Email: [**studio@northbounddigital.co.za**](mailto:studio@northbounddigital.co.za)
 
-Telephone / WhatsApp: **076 611 5666**
+Telephone / WhatsApp: **+27 76 611 5666**
 
 Country of operation: **South Africa**
 
@@ -787,7 +787,7 @@ Website: **northbounddigital.co.za**
 
 Email: [**studio@northbounddigital.co.za**](mailto:studio@northbounddigital.co.za)
 
-Telephone / WhatsApp: **076 611 5666**
+Telephone / WhatsApp: **+27 76 611 5666**
 
 Country: **South Africa**
 

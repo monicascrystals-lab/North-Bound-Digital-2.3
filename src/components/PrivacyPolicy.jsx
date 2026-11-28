@@ -6,7 +6,7 @@ Operated by Monica Frances Cruywagen, a sole proprietor trading as North Bound D
 
 Website: northbounddigital.co.za
 Email: studio@northbounddigital.co.za
-Telephone / WhatsApp: 076 611 5666
+Telephone / WhatsApp: +27 76 611 5666
 
 Last updated: 15 November 2026
 
@@ -32,7 +32,7 @@ Monica Frances Cruywagen
 Trading as North Bound Digital
 Website: northbounddigital.co.za
 Email: studio@northbounddigital.co.za
-Telephone / WhatsApp: 076 611 5666
+Telephone / WhatsApp: +27 76 611 5666
 Country of operation: South Africa
 
 Physical / business address
@@ -494,7 +494,7 @@ Operated by Monica Frances Cruywagen
 Legal status: Sole proprietor
 Website: northbounddigital.co.za
 Email: studio@northbounddigital.co.za
-Telephone / WhatsApp: 076 611 5666
+Telephone / WhatsApp: +27 76 611 5666
 Physical / business address:
 Bloemfontein, Free State
 
