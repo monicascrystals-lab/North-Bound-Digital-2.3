@@ -1048,6 +1048,17 @@ h3 {
   }
 }
 
+@media (max-width: 800px) {
+  .pricing-service-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-subsections > section {
+    padding: 22px 18px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1744,6 +1755,106 @@ a:focus-visible {
   margin-top: 0;
   color: var(--navy);
   font: 600 18px/1.4 var(--heading-font);
+}
+
+.pricing-subsections {
+  display: grid;
+  gap: 38px;
+  margin-top: 38px;
+}
+
+.pricing-subsections > section {
+  padding: 30px;
+  border: 1px solid rgba(21, 50, 74, 0.14);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.pricing-subsections h3 {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: 28px;
+  letter-spacing: -0.035em;
+}
+
+.pricing-subsections .section-kicker {
+  margin-bottom: 8px;
+}
+
+.pricing-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pricing-service-card {
+  position: relative;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(21, 50, 74, 0.12);
+  background: var(--white);
+}
+
+.pricing-service-card h4,
+.faq-item h4 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font: 600 16px/1.35 var(--heading-font);
+}
+
+.pricing-service-card p,
+.faq-item p,
+.recurring-intro,
+.pricing-exclusions {
+  margin: 0;
+  color: var(--slate);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.pricing-service-card .care-price {
+  color: var(--navy);
+  font: 600 18px/1.35 var(--heading-font);
+}
+
+.care-featured {
+  border-color: var(--teal);
+  box-shadow: 0 10px 28px rgba(21, 50, 74, 0.08);
+}
+
+.service-recommended {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 8px;
+  background: var(--teal);
+  color: var(--white);
+  font: 700 9px/1 var(--heading-font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.monthly-grid {
+  margin: 18px 0;
+}
+
+.monthly-grid .pricing-service-card > p + ul {
+  margin-top: 14px;
+}
+
+.pricing-exclusions {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(21, 50, 74, 0.12);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.faq-item {
+  padding-top: 14px;
+  border-top: 1px solid rgba(21, 50, 74, 0.12);
 }
 
 .custom-quote {

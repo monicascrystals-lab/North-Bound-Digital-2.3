@@ -10,10 +10,16 @@ const packageOptions = [
   "SEO & Launch Setup",
   "Website Care & Updates",
   "Logo & Branding",
+  "Custom quote / complex project",
   "Not sure yet, help me choose",
 ];
 
-function ContactSection({ selectedPackage, onPackageChange }) {
+function ContactSection({
+  selectedPackage,
+  onPackageChange,
+  selectedPricing,
+  currencyCode,
+}) {
   const [formStatus, setFormStatus] = useState("");
 
   function handleSubmit(event) {
@@ -24,6 +30,13 @@ function ContactSection({ selectedPackage, onPackageChange }) {
       `Name: ${formData.get("name")}`,
       `Email: ${formData.get("email")}`,
       `What do you need?: ${formData.get("package") || "Not selected"}`,
+      ...(selectedPricing
+        ? [
+            `Package: ${selectedPricing.name}`,
+            `Displayed price: ${selectedPricing.price}`,
+            `Selected currency: ${selectedPricing.currency}`,
+          ]
+        : [`Selected currency: ${currencyCode}`]),
       "",
       "Project details:",
       formData.get("message"),

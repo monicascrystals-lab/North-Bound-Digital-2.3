@@ -1,11 +1,12 @@
-// CHANGE PACKAGE FEATURES HERE
 const essentialFeatures = [
-  "Professional responsive design across mobile, tablet and desktop",
+  "Up to 3 total website pages",
+  "Professional responsive design",
   "Contact/enquiry form",
   "Click-to-call, email and WhatsApp buttons",
   "Social media links",
-  "Launch setup: domain connection, SSL/HTTPS, Google Search Console and XML sitemap submission",
-  "Basic on-page SEO, including page titles, meta descriptions and headings",
+  "Domain connection and SSL/HTTPS setup",
+  "Google Search Console and XML sitemap submission",
+  "Basic on-page SEO",
   "Basic performance optimisation",
   "1 revision round",
   "Website launch",
@@ -13,16 +14,18 @@ const essentialFeatures = [
 ];
 
 const businessFeatures = [
-  "Enhanced custom design with improved page layouts and additional content sections",
-  "Fully responsive across mobile, tablet and desktop",
-  "Portfolio, gallery or service showcase sections",
-  "Contact/enquiry forms (multiple where required), plus click-to-call, email and WhatsApp buttons",
+  "Up to 6 total website pages",
+  "Enhanced custom responsive design",
+  "Portfolio, gallery or service showcase",
+  "Multiple enquiry forms where required",
+  "Click-to-call, email and WhatsApp buttons",
   "Social media links",
   "Conversion-focused calls-to-action",
-  "Launch setup: domain connection, SSL/HTTPS, Google Search Console and XML sitemap submission",
+  "Domain connection and SSL/HTTPS setup",
+  "Google Search Console and XML sitemap submission",
   "Google Analytics setup",
-  "Enhanced on-page SEO, including page titles, meta descriptions, headings and image descriptions",
-  "Basic third-party integrations (up to 2, e.g. Google Maps or a booking link)",
+  "Enhanced on-page SEO",
+  "Up to 2 basic third-party integrations",
   "Subtle animations and interactions",
   "Enhanced performance optimisation",
   "2 revision rounds",
@@ -31,18 +34,20 @@ const businessFeatures = [
 ];
 
 const professionalFeatures = [
-  "Fully customised website design",
-  "Fully responsive across mobile, tablet and desktop",
-  "Advanced content sections and portfolio/gallery or service showcase",
-  "Advanced enquiry forms, plus click-to-call, email and WhatsApp buttons",
+  "Up to 10 total website pages",
+  "Fully customised responsive design",
+  "Advanced content and service showcase sections",
+  "Advanced enquiry forms",
+  "Click-to-call, email and WhatsApp buttons",
   "Social media links",
   "Conversion-focused calls-to-action",
   "Advanced animations and interactions",
-  "Blog or CMS functionality where required",
-  "Advanced integrations within the agreed project scope (up to 4)",
-  "Launch setup: domain connection, SSL/HTTPS, Google Search Console and XML sitemap submission",
+  "Blog or CMS functionality within agreed scope",
+  "Third-party integrations subject to technical assessment",
+  "Domain connection and SSL/HTTPS setup",
+  "Google Search Console and XML sitemap submission",
   "Google Analytics setup",
-  "Advanced SEO foundations, including structured data/schema setup where appropriate",
+  "Advanced SEO foundations and structured data where appropriate",
   "Enhanced accessibility optimisation",
   "Advanced performance optimisation",
   "Priority project support",
@@ -51,46 +56,14 @@ const professionalFeatures = [
   "60 days post-launch technical support",
 ];
 
-// CHANGE PACKAGE PRICES HERE
-const packagePrices = {
-  Essential: {
-    ZAR: 3500,
-    USD: 599,
-    GBP: 449,
-    EUR: 549,
-    AUD: 899,
-    NZD: 999,
-    CAD: 799,
-  },
-  Business: {
-    ZAR: 6900,
-    USD: 1199,
-    GBP: 899,
-    EUR: 1099,
-    AUD: 1799,
-    NZD: 1999,
-    CAD: 1599,
-  },
-  Professional: {
-    ZAR: 12500,
-    USD: 1999,
-    GBP: 1499,
-    EUR: 1849,
-    AUD: 2999,
-    NZD: 3299,
-    CAD: 2599,
-  },
-};
-
 const packageDefinitions = [
   {
     name: "Essential",
-    description:
-      "A simple, professional website for businesses that need a strong online presence without unnecessary complexity.",
+    description: "Get your business online. A professional website that helps customers find your business, understand your services and contact you directly.",
     pages: "Up to 3 total pages",
     highlights: [
+      "Up to 3 total website pages",
       "Professional responsive design",
-      "Contact/enquiry form",
       "Basic on-page SEO",
       "14 days post-launch technical support",
     ],
@@ -99,14 +72,13 @@ const packageDefinitions = [
   },
   {
     name: "Business",
-    description:
-      "A more advanced website for growing businesses that need stronger design, analytics and lead generation.",
+    description: "Turn visitors into customers. A customised, conversion-focused website designed to build credibility, showcase your services and generate more enquiries.",
     pages: "Up to 6 total pages",
-    badge: "Most Popular",
+    badge: "Recommended",
     highlights: [
+      "Up to 6 total website pages",
       "Enhanced custom design",
       "Google Analytics setup",
-      "Multiple enquiry/contact forms where required",
       "30 days post-launch technical support",
     ],
     features: businessFeatures,
@@ -114,13 +86,12 @@ const packageDefinitions = [
   },
   {
     name: "Professional",
-    description:
-      "A highly customised website for businesses that need a larger, more advanced and distinctive online presence.",
+    description: "Stand out from your competition. A premium, highly customised digital presence built around your business goals, brand and operational requirements.",
     pages: "Up to 10 total pages",
     highlights: [
+      "Up to 10 total website pages",
       "Fully customised website design",
-      "Blog or CMS functionality where required",
-      "Advanced integrations within the agreed project scope",
+      "Advanced content and interactions",
       "60 days post-launch technical support",
     ],
     features: professionalFeatures,
@@ -128,19 +99,43 @@ const packageDefinitions = [
   },
 ];
 
+export const pricing = {
+  currencies: [
+    { code: "USD", label: "United States / USD — US Dollar", symbol: "$", market: "United States" },
+    { code: "GBP", label: "United Kingdom / GBP — British Pound", symbol: "£", market: "United Kingdom" },
+    { code: "AUD", label: "Australia / AUD — Australian Dollar", symbol: "A$", market: "Australia" },
+    { code: "CAD", label: "Canada / CAD — Canadian Dollar", symbol: "C$", market: "Canada" },
+    { code: "EUR", label: "Europe / EUR — Euro", symbol: "€", market: "Europe" },
+    { code: "NZD", label: "New Zealand / NZD — New Zealand Dollar", symbol: "NZ$", market: "New Zealand" },
+    { code: "ZAR", label: "South Africa / ZAR — South African Rand", symbol: "R", market: "South Africa" },
+  ],
+  packages: {
+    Essential: { USD: 599, GBP: 449, AUD: 899, CAD: 799, EUR: 549, NZD: 999, ZAR: 7999 },
+    Business: { USD: 1199, GBP: 899, AUD: 1799, CAD: 1599, EUR: 1099, NZD: 1999, ZAR: 14999 },
+    Professional: { USD: 1999, GBP: 1499, AUD: 2999, CAD: 2599, EUR: 1849, NZD: 3299, ZAR: 24999 },
+  },
+  optionalServices: {
+    additionalPage: { USD: 125, GBP: 95, AUD: 190, CAD: 170, EUR: 115, NZD: 210, ZAR: 1650 },
+    copywriting: { USD: 75, GBP: 55, AUD: 115, CAD: 100, EUR: 70, NZD: 125, ZAR: 1000 },
+    logo: { USD: 150, GBP: 115, AUD: 225, CAD: 200, EUR: 140, NZD: 250, ZAR: 2000 },
+    booking: { USD: 250, GBP: 190, AUD: 375, CAD: 335, EUR: 230, NZD: 420, ZAR: 3300 },
+    googleBusiness: { USD: 99, GBP: 75, AUD: 150, CAD: 135, EUR: 90, NZD: 165, ZAR: 1300 },
+  },
+  monthlyServices: {
+    hosting: { USD: 15, GBP: 12, AUD: 23, CAD: 20, EUR: 14, NZD: 25, ZAR: 199 },
+    care: { USD: 49, GBP: 39, AUD: 75, CAD: 65, EUR: 45, NZD: 85, ZAR: 649 },
+    seo: { USD: 199, GBP: 149, AUD: 299, CAD: 269, EUR: 185, NZD: 329, ZAR: 2499 },
+  },
+};
+
 const packages = packageDefinitions.map((definition) => ({
   ...definition,
-  prices: packagePrices[definition.name],
+  prices: pricing.packages[definition.name],
 }));
 
-export const currencies = [
-  { code: "ZAR", label: "South Africa — ZAR (R)", symbol: "R" },
-  { code: "USD", label: "United States / International — USD ($)", symbol: "$" },
-  { code: "GBP", label: "United Kingdom — GBP (£)", symbol: "£" },
-  { code: "EUR", label: "European Union — EUR (€)", symbol: "€" },
-  { code: "AUD", label: "Australia — AUD (A$)", symbol: "A$" },
-  { code: "NZD", label: "New Zealand — NZD (NZ$)", symbol: "NZ$" },
-  { code: "CAD", label: "Canada — CAD (C$)", symbol: "C$" },
-];
+export const currencies = pricing.currencies;
+export function formatPrice(amount, currency) {
+  return `${currency.symbol}${amount.toLocaleString("en-US")}`;
+}
 
 export default packages;

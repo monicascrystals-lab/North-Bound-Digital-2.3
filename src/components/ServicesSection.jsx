@@ -1,6 +1,7 @@
 import ParticleText from './reactbits/ParticleText';
 import { useState } from "react";
 import services from "../data/services.js";
+import { currencies, formatPrice, pricing } from "../data/packages.js";
 import SectionHeading from "./SectionHeading.jsx";
 
 const iconPaths = {
@@ -21,8 +22,10 @@ function ServiceIcon({ name }) {
   );
 }
 
-function ServicesSection() {
+function ServicesSection({ currencyCode = "USD" }) {
   const [expandedServices, setExpandedServices] = useState([]);
+  const currency =
+    currencies.find((item) => item.code === currencyCode) ?? currencies[0];
 
   function toggleService(title) {
     setExpandedServices((expanded) =>
@@ -96,6 +99,13 @@ function ServicesSection() {
                         {service.priceLine && (
                           <strong>{service.priceLine}</strong>
                         )}
+                        {service.priceKey === "packages" && (
+                          <p className="service-pricing-note">
+                            Essential {formatPrice(pricing.packages.Essential[currency.code], currency)} ·
+                            {" "}Business {formatPrice(pricing.packages.Business[currency.code], currency)} ·
+                            {" "}Professional {formatPrice(pricing.packages.Professional[currency.code], currency)}
+                          </p>
+                        )}
                         {service.priceDetails?.map((detail) => (
                           <p className="service-pricing-note" key={detail}>
                             {detail}
@@ -117,7 +127,11 @@ function ServicesSection() {
                                   <span>{option.name}</span>
                                   <span>
                                     {option.priceLine ??
-                                      `Starting from ${option.priceZA} / ${option.priceInternational}`}
+                                      (option.optionalKey
+                                        ? `Starting from ${formatPrice(pricing.optionalServices[option.optionalKey][currency.code], currency)}`
+                                        : option.priceKey
+                                          ? `${option.recurring ? "From" : "Starting from"} ${formatPrice(pricing.monthlyServices[option.priceKey][currency.code], currency)}${option.recurring ? " / month" : ""}`
+                                          : "")}
                                   </span>
                                 </div>
                                 {option.description && (

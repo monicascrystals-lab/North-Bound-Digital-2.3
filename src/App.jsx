@@ -33,6 +33,8 @@ function getLegalPage() {
 
 function App() {
   const [selectedPackage, setSelectedPackage] = useState("");
+  const [selectedPricing, setSelectedPricing] = useState(null);
+  const [currencyCode, setCurrencyCode] = useState("USD");
   const [legalPage, setLegalPage] = useState(getLegalPage);
   const [cookieConsent, setCookieConsent] = useState(getCookieConsent);
   const [cookiePreferencesOpen, setCookiePreferencesOpen] = useState(false);
@@ -66,8 +68,13 @@ function App() {
     if (analyticsGranted) loadGoogleAnalytics();
   }, [cookieConsent]);
 
-  function choosePackage(packageName) {
+  function choosePackage(packageName, packageDisplayName, packagePrice, packageCurrency) {
     setSelectedPackage(packageName);
+    setSelectedPricing({
+      name: packageDisplayName,
+      price: packagePrice,
+      currency: packageCurrency,
+    });
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   }
 
@@ -117,12 +124,21 @@ function App() {
       <main id="main-content" tabIndex="-1">
         <Hero />
         <AboutSection />
-        <ServicesSection />
-        <PackageSection onChoosePackage={choosePackage} />
+        <ServicesSection currencyCode={currencyCode} />
+        <PackageSection
+          onChoosePackage={choosePackage}
+          currencyCode={currencyCode}
+          onCurrencyChange={setCurrencyCode}
+        />
         <PortfolioSection />
         <ContactSection
           selectedPackage={selectedPackage}
-          onPackageChange={setSelectedPackage}
+          onPackageChange={(value) => {
+            setSelectedPackage(value);
+            setSelectedPricing(null);
+          }}
+          selectedPricing={selectedPricing}
+          currencyCode={currencyCode}
         />
       </main>
       <SiteFooter onOpenCookieSettings={() => setCookiePreferencesOpen(true)} />
